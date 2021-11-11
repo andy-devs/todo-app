@@ -1,0 +1,27 @@
+:root {
+	--primary-bright-blue: hsl(220, 98%, 61%);
+	--gradient-bg-1: hsl(192, 100%, 67%);
+	--gradient-bg-2: hsl(280, 87%, 65%);
+
+	--light-vl-gray: hsl(0, 0%, 98%);
+	--light-vl-grayish-blue: hsl(236, 33%, 92%);
+	--light-l-grayish-blue: hsl(233, 11%, 84%);
+	--light-d-grayish-blue: hsl(236, 9%, 61%);
+	--light-vd-grayish-blue: hsl(235, 19%, 35%);
+
+	--dark-vd-blue: hsl(235, 21%, 11%);
+	--dark-vd-des-blue: hsl(235, 24%, 19%);
+	--dark-l-grayish-blue: hsl(234, 39%, 85%);
+	--dark-l-grayish-blue-hover: hsl(236, 33%, 92%);
+	--dark-d-grayish-blue: hsl(234, 11%, 52%);
+	--dark-vd-grayish-blue-1: hsl(233, 14%, 35%);
+	--dark-vd-grayish-blue-2: hsl(237, 14%, 26%);
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-size: 18px;
+	font-family: 'Josefin Sans', sans-serif;
+}
