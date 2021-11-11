@@ -19,11 +19,83 @@
 		<title>Frontend Mentor | Todo app</title>
 	</head>
 	<body>
-		Todo
+		<div class="color-wrapper">
+			<div class="image-wrapper">
+				<main class="main-block">
+					<div class="todo">
+						<div class="todo__head">
+							<h1 class="todo__head-text">TODO</h1>
+							<div class="todo__head-icon">
+								<img
+									src="./images/icon-sun.svg"
+									alt=""
+									class="todo__head-icon__item"
+								/>
+							</div>
+						</div>
+						<div class="todo__input-block">
+							<input
+								type="text"
+								placeholder="Create a new todo..."
+								class="todo__input-item"
+							/>
+						</div>
 
-		<!-- Add dynamic number -->
-		items left All Active Completed Clear Completed Drag and drop to reorder
-		list
+						<div class="todo__block">
+							<div class="todo__block-item">
+								<div class="todo__block-item__check"></div>
+								<p class="todo__block-item__text">
+									Do something....
+								</p>
+							</div>
+							<div class="todo__block-item">
+								<div class="todo__block-item__check"></div>
+								<p class="todo__block-item__text">
+									Do something....
+								</p>
+							</div>
+							<div class="todo__block-item">
+								<div class="todo__block-item__check"></div>
+								<p class="todo__block-item__text">
+									Do something....
+								</p>
+							</div>
+							<div class="todo__block-item">
+								<div class="todo__block-item__check"></div>
+								<p class="todo__block-item__text">
+									Do something....
+								</p>
+							</div>
+						</div>
+						<div class="todo__info">
+							<p class="todo__info-left">
+								<span class="todo__info-left__count">0</span>
+								items left
+							</p>
+							<div class="todo__info-panel">
+								<button class="todo__info-panel__all">
+									All
+								</button>
+								<button class="todo__info-panel__active">
+									Active
+								</button>
+								<button class="todo__info-panel__completed">
+									Completed
+								</button>
+							</div>
+							<button class="todo__info-clear">
+								Clear Completed
+							</button>
+						</div>
+						<div class="todo__drag-and-drop">
+							<p class="todo__drag-and-drop__text">
+								Drag and drop to reorder list
+							</p>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
 		<script src="./app.js"></script>
 	</body>
 </html>
