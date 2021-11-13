@@ -287,6 +287,9 @@ body {
 	-ms-transition: color 0.15s ease-out;
 	-o-transition: color 0.15s ease-out;
 }
+.panel-button._active {
+	color: var(--primary-bright-blue);
+}
 .panel-button:hover {
 	color: var(--primary-bright-blue);
 }
