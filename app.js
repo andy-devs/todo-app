@@ -66,6 +66,52 @@ panelButtonCompleted.addEventListener('click', (e) => {
 	}
 });
 
+const panelButtonsMobile = document.querySelectorAll('.panel-button-mobile');
+
+const panelButtonAllMobile = document.querySelector(
+	'.todo__info-panel__all-mobile'
+);
+const panelButtonActiveMobile = document.querySelector(
+	'.todo__info-panel__active-mobile'
+);
+const panelButtonCompletedMobile = document.querySelector(
+	'.todo__info-panel__completed-mobile'
+);
+
+function resetButtons() {
+	for (let b of panelButtonsMobile) {
+		b.classList.remove('_active');
+	}
+}
+
+panelButtonAllMobile.addEventListener('click', (e) => {
+	resetButtons();
+	panelButtonAllMobile.classList.add('_active');
+	for (let todo of todoList) {
+		todo.style.display = 'flex';
+	}
+});
+panelButtonActiveMobile.addEventListener('click', (e) => {
+	resetButtons();
+	panelButtonActiveMobile.classList.add('_active');
+	for (let todo of todoList) {
+		if (todo.classList.contains('_active')) todo.style.display = 'none';
+		else {
+			todo.style.display = 'flex';
+		}
+	}
+});
+panelButtonCompletedMobile.addEventListener('click', (e) => {
+	resetButtons();
+	panelButtonCompletedMobile.classList.add('_active');
+	for (let todo of todoList) {
+		if (!todo.classList.contains('_active')) todo.style.display = 'none';
+		else {
+			todo.style.display = 'flex';
+		}
+	}
+});
+
 const clearButton = document.querySelector('.todo__info-clear');
 
 clearButton.addEventListener('click', (e) => {

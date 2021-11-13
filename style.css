@@ -23,20 +23,14 @@
 	box-sizing: border-box;
 }
 body {
-	height: 100vh;
+	background-color: var(--dark-vd-blue);
+	height: 100%;
 	width: 100%;
 	font-size: 18px;
 	font-family: 'Josefin Sans', sans-serif;
 }
-.color-wrapper {
-	height: 100vh;
-	width: 100%;
-	background-color: var(--dark-vd-blue);
-}
 .image-wrapper {
-	height: 37vh;
-	width: 100%;
-	z-index: -1;
+	height: 35vh;
 	background-image: url('./images/bg-desktop-dark.jpg');
 	background-size: cover;
 	background-position: top top;
@@ -47,7 +41,7 @@ body {
 	min-width: 100%;
 }
 .main-block {
-	height: 100vh;
+	padding: 2rem;
 	min-width: 100%;
 	display: grid;
 	place-items: center;
@@ -141,6 +135,13 @@ body {
 }
 .todo__input-item:focus {
 	outline: none;
+}
+.todo__block {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
 }
 .todo__block-item {
 	cursor: pointer;
@@ -268,7 +269,7 @@ body {
 	color: var(--primary-bright-blue);
 }
 .panel-button:hover {
-	color: var(--primary-bright-blue);
+	color: var(--dark-l-grayish-blue-hover);
 }
 .todo__info-panel__all {
 	padding: 0.35rem;
@@ -300,8 +301,47 @@ body {
 	opacity: 0.5;
 }
 
+.todo__info-panel-mobile {
+	display: none;
+}
+
 @media (max-width: 768px) {
 	.todo {
 		width: 300px;
+	}
+	.todo__info {
+		margin-bottom: 1rem;
+	}
+	.todo__info-panel {
+		display: none;
+	}
+	.todo__info-panel-mobile {
+		border-radius: 5px;
+		background-color: var(--dark-vd-des-blue);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 1rem;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		-ms-border-radius: 5px;
+		-o-border-radius: 5px;
+	}
+	.panel-button-mobile {
+		border: none;
+		background: none;
+		color: var(--dark-d-grayish-blue);
+		font-family: 'Josefin Sans', sans-serif;
+		font-size: 0.95rem;
+		cursor: pointer;
+		padding: 1rem 0.5rem;
+		transition: color 0.15s ease-out;
+		-webkit-transition: color 0.15s ease-out;
+		-moz-transition: color 0.15s ease-out;
+		-ms-transition: color 0.15s ease-out;
+		-o-transition: color 0.15s ease-out;
+	}
+	.panel-button-mobile._active {
+		color: var(--primary-bright-blue);
 	}
 }

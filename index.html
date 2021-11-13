@@ -19,33 +19,53 @@
 		<title>Todo app</title>
 	</head>
 	<body>
-		<div class="color-wrapper">
-			<div class="image-wrapper">
-				<main class="main-block">
-					<div class="todo">
-						<div class="todo__head">
-							<h1 class="todo__head-text">TODO</h1>
-							<div class="todo__head-icon">
-								<img
-									src="./images/icon-sun.svg"
-									alt=""
-									class="todo__head-icon__item"
-								/>
+		<div class="image-wrapper">
+			<main class="main-block">
+				<div class="todo">
+					<div class="todo__head">
+						<h1 class="todo__head-text">TODO</h1>
+						<div class="todo__head-icon">
+							<img
+								src="./images/icon-sun.svg"
+								alt=""
+								class="todo__head-icon__item"
+							/>
+						</div>
+					</div>
+					<form action="#" method="post" class="todo__input-block">
+						<div class="todo__input-item__check">
+							<div class="todo__input-item__check-circle__wrap">
+								<div class="todo__input-item__check-circle">
+									<div
+										class="
+											todo__input-item__check-circle__check
+										"
+									>
+										<img
+											src="./images/icon-check.svg"
+											alt=""
+										/>
+									</div>
+								</div>
 							</div>
 						</div>
-						<form
-							action="#"
-							method="post"
-							class="todo__input-block"
-						>
-							<div class="todo__input-item__check">
+						<input
+							type="text"
+							placeholder="Create a new todo..."
+							class="todo__input-item"
+						/>
+					</form>
+
+					<div class="todo__block container">
+						<div class="todo__block-item">
+							<div class="todo__block-item__check">
 								<div
-									class="todo__input-item__check-circle__wrap"
+									class="todo__block-item__check-circle__wrap"
 								>
-									<div class="todo__input-item__check-circle">
+									<div class="todo__block-item__check-circle">
 										<div
 											class="
-												todo__input-item__check-circle__check
+												todo__block-item__check-circle__check
 											"
 										>
 											<img
@@ -56,183 +76,152 @@
 									</div>
 								</div>
 							</div>
-							<input
-								type="text"
-								placeholder="Create a new todo..."
-								class="todo__input-item"
-							/>
-						</form>
-
-						<div class="todo__block container">
-							<div class="todo__block-item">
-								<div class="todo__block-item__check">
-									<div
-										class="
-											todo__block-item__check-circle__wrap
-										"
-									>
-										<div
-											class="
-												todo__block-item__check-circle
-											"
-										>
-											<div
-												class="
-													todo__block-item__check-circle__check
-												"
-											>
-												<img
-													src="./images/icon-check.svg"
-													alt=""
-												/>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="todo__block-item__text-wrapper">
-									<p class="todo__block-item__text">
-										Do Something.... 1
-									</p>
-								</div>
-							</div>
-							<div class="todo__block-item">
-								<div class="todo__block-item__check">
-									<div
-										class="
-											todo__block-item__check-circle__wrap
-										"
-									>
-										<div
-											class="
-												todo__block-item__check-circle
-											"
-										>
-											<div
-												class="
-													todo__block-item__check-circle__check
-												"
-											>
-												<img
-													src="./images/icon-check.svg"
-													alt=""
-												/>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="todo__block-item__text-wrapper">
-									<p class="todo__block-item__text">
-										Do Something.... 2
-									</p>
-								</div>
-							</div>
-							<div class="todo__block-item">
-								<div class="todo__block-item__check">
-									<div
-										class="
-											todo__block-item__check-circle__wrap
-										"
-									>
-										<div
-											class="
-												todo__block-item__check-circle
-											"
-										>
-											<div
-												class="
-													todo__block-item__check-circle__check
-												"
-											>
-												<img
-													src="./images/icon-check.svg"
-													alt=""
-												/>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="todo__block-item__text-wrapper">
-									<p class="todo__block-item__text">
-										Do Something.... 3
-									</p>
-								</div>
-							</div>
-							<div class="todo__block-item">
-								<div class="todo__block-item__check">
-									<div
-										class="
-											todo__block-item__check-circle__wrap
-										"
-									>
-										<div
-											class="
-												todo__block-item__check-circle
-											"
-										>
-											<div
-												class="
-													todo__block-item__check-circle__check
-												"
-											>
-												<img
-													src="./images/icon-check.svg"
-													alt=""
-												/>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="todo__block-item__text-wrapper">
-									<p class="todo__block-item__text">
-										Do Something.... 4
-									</p>
-								</div>
+							<div class="todo__block-item__text-wrapper">
+								<p class="todo__block-item__text">
+									Do Something.... 1
+								</p>
 							</div>
 						</div>
-						<div class="todo__info">
-							<p class="todo__info-left">
-								<span class="todo__info-left__count">0</span>
-								items left
-							</p>
-							<div class="todo__info-panel">
-								<button
-									class="
-										todo__info-panel__all
-										panel-button
-										_active
-									"
+						<div class="todo__block-item">
+							<div class="todo__block-item__check">
+								<div
+									class="todo__block-item__check-circle__wrap"
 								>
-									All
-								</button>
-								<button
-									class="
-										todo__info-panel__active
-										panel-button
-									"
-								>
-									Active
-								</button>
-								<button
-									class="
-										todo__info-panel__completed
-										panel-button
-									"
-								>
-									Completed
-								</button>
+									<div class="todo__block-item__check-circle">
+										<div
+											class="
+												todo__block-item__check-circle__check
+											"
+										>
+											<img
+												src="./images/icon-check.svg"
+												alt=""
+											/>
+										</div>
+									</div>
+								</div>
 							</div>
-							<button class="todo__info-clear panel-button">
-								Clear Completed
-							</button>
+							<div class="todo__block-item__text-wrapper">
+								<p class="todo__block-item__text">
+									Do Something.... 2
+								</p>
+							</div>
 						</div>
-						<div class="todo__drag-and-drop">
-							<p class="todo__drag-and-drop__text">
-								Drag and drop to reorder list
-							</p>
+						<div class="todo__block-item">
+							<div class="todo__block-item__check">
+								<div
+									class="todo__block-item__check-circle__wrap"
+								>
+									<div class="todo__block-item__check-circle">
+										<div
+											class="
+												todo__block-item__check-circle__check
+											"
+										>
+											<img
+												src="./images/icon-check.svg"
+												alt=""
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="todo__block-item__text-wrapper">
+								<p class="todo__block-item__text">
+									Do Something.... 3
+								</p>
+							</div>
+						</div>
+						<div class="todo__block-item">
+							<div class="todo__block-item__check">
+								<div
+									class="todo__block-item__check-circle__wrap"
+								>
+									<div class="todo__block-item__check-circle">
+										<div
+											class="
+												todo__block-item__check-circle__check
+											"
+										>
+											<img
+												src="./images/icon-check.svg"
+												alt=""
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="todo__block-item__text-wrapper">
+								<p class="todo__block-item__text">
+									Do Something.... 4
+								</p>
+							</div>
 						</div>
 					</div>
-				</main>
-			</div>
+					<div class="todo__info">
+						<p class="todo__info-left">
+							<span class="todo__info-left__count">0</span>
+							items left
+						</p>
+						<div class="todo__info-panel">
+							<button
+								class="
+									todo__info-panel__all
+									panel-button
+									_active
+								"
+							>
+								All
+							</button>
+							<button
+								class="todo__info-panel__active panel-button"
+							>
+								Active
+							</button>
+							<button
+								class="todo__info-panel__completed panel-button"
+							>
+								Completed
+							</button>
+						</div>
+						<button class="todo__info-clear panel-button">
+							Clear Completed
+						</button>
+					</div>
+					<div class="todo__info-panel-mobile">
+						<button
+							class="
+								todo__info-panel__all-mobile
+								panel-button-mobile
+								_active
+							"
+						>
+							All
+						</button>
+						<button
+							class="
+								todo__info-panel__active-mobile
+								panel-button-mobile
+							"
+						>
+							Active
+						</button>
+						<button
+							class="
+								todo__info-panel__completed-mobile
+								panel-button-mobile
+							"
+						>
+							Completed
+						</button>
+					</div>
+					<div class="todo__drag-and-drop">
+						<p class="todo__drag-and-drop__text">
+							Drag and drop to reorder list
+						</p>
+					</div>
+				</div>
+			</main>
 		</div>
 		<script src="./app.js"></script>
 	</body>
