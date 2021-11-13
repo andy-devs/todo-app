@@ -130,9 +130,18 @@ todoForm.addEventListener('submit', (e) => {
 
 	const todoBlock = document.querySelector('.todo__block');
 	todoBlock.appendChild(todo__blockItem);
-	updateTodo();
+
 	todoList = document.querySelectorAll('.todo__block-item');
 	draggables = document.querySelectorAll('.draggable');
+	updateTodo();
+	draggables.forEach((draggable) => {
+		draggable.addEventListener('dragstart', (e) => {
+			draggable.classList.add('dragging');
+		});
+		draggable.addEventListener('dragend', (e) => {
+			draggable.classList.remove('dragging');
+		});
+	});
 });
 
 // Drag and Drop
