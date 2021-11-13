@@ -30,7 +30,8 @@ body {
 	font-family: 'Josefin Sans', sans-serif;
 }
 .image-wrapper {
-	height: 35vh;
+	min-height: 35vh;
+	max-height: 35vh;
 	background-image: url('./images/bg-desktop-dark.jpg');
 	background-size: cover;
 	background-position: top top;
@@ -137,12 +138,10 @@ body {
 	outline: none;
 }
 .todo__block {
+	background-color: var(--dark-vd-des-blue);
+	padding-bottom: 0.6rem;
+	padding-top: 0.2rem;
 	max-width: 100%;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	-ms-border-radius: 10px;
-	-o-border-radius: 10px;
 }
 .todo__block-item {
 	cursor: pointer;
