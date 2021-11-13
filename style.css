@@ -137,6 +137,7 @@ body {
 	outline: none;
 }
 .todo__block {
+	max-width: 100%;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -237,6 +238,9 @@ body {
 	color: var(--dark-l-grayish-blue);
 	border: 1px solid var(--dark-vd-des-blue);
 }
+.todo__block-item__text {
+	overflow-wrap: anywhere;
+}
 .todo__info {
 	margin-bottom: 2.5rem;
 	display: flex;
@@ -308,6 +312,9 @@ body {
 @media (max-width: 768px) {
 	.todo {
 		width: 300px;
+	}
+	.todo__block {
+		max-width: 100%;
 	}
 	.todo__info {
 		margin-bottom: 1rem;

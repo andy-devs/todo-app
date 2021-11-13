@@ -36,6 +36,9 @@ function resetButtons() {
 	for (let b of panelButtons) {
 		b.classList.remove('_active');
 	}
+	for (let b of panelButtonsMobile) {
+		b.classList.remove('_active');
+	}
 }
 
 panelButtonAll.addEventListener('click', (e) => {
@@ -77,12 +80,6 @@ const panelButtonActiveMobile = document.querySelector(
 const panelButtonCompletedMobile = document.querySelector(
 	'.todo__info-panel__completed-mobile'
 );
-
-function resetButtons() {
-	for (let b of panelButtonsMobile) {
-		b.classList.remove('_active');
-	}
-}
 
 panelButtonAllMobile.addEventListener('click', (e) => {
 	resetButtons();
@@ -154,7 +151,7 @@ todoForm.addEventListener('submit', (e) => {
 
 	let todo__blockItem__text = document.createElement('p');
 	todo__blockItem__text.className = 'todo__block-item__text';
-	todo__blockItem__text.innerText = todoText;
+	todo__blockItem__text.innerHTML = todoText;
 
 	todo__blockItem__textWrapper.appendChild(todo__blockItem__text);
 
