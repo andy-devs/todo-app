@@ -1,6 +1,7 @@
 var todoList = document.querySelectorAll('.todo__block-item');
 for (let todo of todoList) {
 	todo.draggable = true;
+	todo.classList.add('draggable');
 }
 
 const todoCount = document.querySelector('.todo__info-left__count');
@@ -83,7 +84,7 @@ todoForm.addEventListener('submit', (e) => {
 	todoInput.value = '';
 
 	let todo__blockItem = document.createElement('div');
-	todo__blockItem.className = 'todo__block-item';
+	todo__blockItem.className = 'todo__block-item draggable';
 
 	let todo__blockItem__check = document.createElement('div');
 	todo__blockItem__check.className = 'todo__block-item__check';
@@ -129,41 +130,52 @@ todoForm.addEventListener('submit', (e) => {
 
 	const todoBlock = document.querySelector('.todo__block');
 	todoBlock.appendChild(todo__blockItem);
-	todoList = document.querySelectorAll('.todo__block-item');
 	updateTodo();
+	todoList = document.querySelectorAll('.todo__block-item');
+	draggables = document.querySelectorAll('.draggable');
 });
 
 // Drag and Drop
 
-const todoBlock = document.querySelector('.todo__block');
+var draggables = document.querySelectorAll('.draggable');
+var container = document.querySelector('.container');
 
-todoBlock.addEventListener('dragover', dragover);
-todoBlock.addEventListener('dragenter', dragenter);
-todoBlock.addEventListener('dragleave', dragleave);
-todoBlock.addEventListener('drop', dragdrop);
-
-for (let todo of todoList) {
-	todo.addEventListener('dragstart', dragstart);
-	todo.addEventListener('dragend', dragend);
-}
-
-function dragstart(e) {
-	e.target.classList.add('hold');
-	setTimeout(() => {
-		e.target.classList.add('hide', 0);
+draggables.forEach((draggable) => {
+	draggable.addEventListener('dragstart', (e) => {
+		draggable.classList.add('dragging');
 	});
-}
-function dragend(e) {
-	e.target.classList.remove('hold', 'hide');
-}
+	draggable.addEventListener('dragend', (e) => {
+		draggable.classList.remove('dragging');
+	});
+});
 
-function dragover(e) {
+container.addEventListener('dragover', (e) => {
 	e.preventDefault();
-}
-function dragenter(e) {
-	console.log(e.target.parentNode);
-}
-function dragleave(e) {}
-function dragdrop(e) {
-	e.target.append(todo);
+	const afterElement = getDragAfterElement(container, e.clientY);
+	const draggable = document.querySelector('.dragging');
+	if (afterElement == null) {
+		container.appendChild(draggable);
+	} else {
+		container.insertBefore(draggable, afterElement);
+	}
+});
+
+function getDragAfterElement(container, y) {
+	const draggableElements = [
+		...container.querySelectorAll('.draggable:not(.dragging)'),
+	];
+	return draggableElements.reduce(
+		(closest, child) => {
+			const box = child.getBoundingClientRect();
+			const offset = y - box.top - box.height / 2;
+			if (offset < 0 && offset > closest.offset) {
+				return { offset: offset, element: child };
+			} else {
+				return closest;
+			}
+		},
+		{
+			offset: Number.NEGATIVE_INFINITY,
+		}
+	).element;
 }
