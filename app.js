@@ -231,3 +231,11 @@ function getDragAfterElement(container, y) {
 		}
 	).element;
 }
+
+const colorButton = document.querySelector(
+	'.todo__input-item__check-circle__check'
+);
+
+colorButton.addEventListener('click', (e) => {
+	const bgPicture = document.querySelector('');
+});

@@ -30,8 +30,7 @@ body {
 	font-family: 'Josefin Sans', sans-serif;
 }
 .image-wrapper {
-	min-height: 35vh;
-	max-height: 35vh;
+	height: 16rem;
 	background-image: url('./images/bg-desktop-dark.jpg');
 	background-size: cover;
 	background-position: top top;
@@ -88,8 +87,8 @@ body {
 	background-color: var(--dark-vd-des-blue);
 }
 .todo__input-item__check-circle {
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 100%;
+	height: 100%;
 	background-color: var(--dark-vd-des-blue);
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
@@ -98,8 +97,7 @@ body {
 	-o-border-radius: 50%;
 }
 .todo__input-item__check-circle__wrap {
-	display: grid;
-	place-items: center;
+	padding: 0.12rem;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -108,7 +106,7 @@ body {
 	margin: 1rem;
 	width: 1.6rem;
 	height: 1.6rem;
-	background: var(--dark-d-grayish-blue);
+	background: var(--dark-vd-grayish-blue-1);
 }
 .todo__input-item__check-circle__check {
 	width: 100%;
@@ -150,16 +148,14 @@ body {
 }
 .todo__block-item__check {
 	cursor: pointer;
-	border-top-left-radius: 2px;
-	border-bottom-left-radius: 2px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--dark-vd-des-blue);
 }
 .todo__block-item__check-circle {
-	width: 1.5rem;
-	height: 1.5rem;
+	width: 100%;
+	height: 100%;
 	background-color: var(--dark-vd-des-blue);
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
@@ -168,9 +164,7 @@ body {
 	-o-border-radius: 50%;
 }
 .todo__block-item__check-circle__wrap {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	padding: 0.12rem;
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -179,7 +173,7 @@ body {
 	margin: 1rem;
 	width: 1.6rem;
 	height: 1.6rem;
-	background: var(--dark-d-grayish-blue);
+	background: var(--dark-vd-grayish-blue-1);
 }
 .todo__block-item__check-circle__check {
 	width: 100%;
