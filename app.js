@@ -1,3 +1,23 @@
+primaryBrightBlue = 'hsl(220, 98%, 61%)';
+gradientBg1 = 'hsl(192, 100%, 67%)';
+gradientBg2 = 'hsl(280, 87%, 65%)';
+
+lightVlGray = 'hsl(0, 0%, 98%)';
+lightVlGrayishBlue = 'hsl(236, 33%, 92%)';
+lightLGrayishBlue = 'hsl(233, 11%, 84%)';
+lightDGrayishBlue = 'hsl(236, 9%, 61%)';
+lightVdGrayishBlue = 'hsl(235, 19%, 35%)';
+
+darkVdBlue = 'hsl(235, 21%, 11%)';
+darkVdDesBlue = 'hsl(235, 24%, 19%)';
+darkLGrayishBlue = 'hsl(234, 39%, 85%)';
+darkLGrayishBlueHover = 'hsl(236, 33%, 92%)';
+darkDGrayishBlue = 'hsl(234, 11%, 52%)';
+darkVdGrayishBlue1 = 'hsl(233, 14%, 35%)';
+darkVdGrayishBlue2 = 'hsl(237, 14%, 26%)';
+
+let theme = 'dark';
+
 var todoList = document.querySelectorAll('.todo__block-item');
 for (let todo of todoList) {
 	todo.draggable = true;
@@ -165,6 +185,20 @@ todoForm.addEventListener('submit', (e) => {
 	todo__blockItem.appendChild(todo__blockItem__check);
 	todo__blockItem.appendChild(todo__blockItem__textWrapper);
 
+	if (theme === 'light') {
+		todo__blockItem.style.backgroundColor = lightVlGrayishBlue;
+		todo__blockItem.style.color = lightDGrayishBlue;
+
+		todo__blockItem__check.style.backgroundColor = lightVlGray;
+
+		todo__blockItem__textWrapper.style.backgroundColor = lightVlGray;
+		todo__blockItem__textWrapper.style.color = lightVdGrayishBlue;
+
+		todo__blockItem__checkWrap.style.backgroundColor = lightLGrayishBlue;
+
+		todo__blockItem__checkCircle.style.backgroundColor = lightVlGray;
+	}
+
 	todo__blockItem.addEventListener('click', (e) => {
 		todo__blockItem.classList.toggle('_active');
 		updateTodo();
@@ -232,10 +266,95 @@ function getDragAfterElement(container, y) {
 	).element;
 }
 
-const colorButton = document.querySelector(
-	'.todo__input-item__check-circle__check'
+const colorButton = document.querySelector('.todo__head-icon');
+const themeIcon = document.querySelector('.todo__head-icon__item');
+const bgPicture = document.querySelector('.image-wrapper');
+const bgColor = document.querySelector('body');
+
+const inputCheck = document.querySelector('.todo__input-item__check');
+const inputCheckWrapper = document.querySelector(
+	'.todo__input-item__check-circle__wrap'
 );
+const inputCheckWrapperCircle = document.querySelector(
+	'.todo__input-item__check-circle'
+);
+const inputBody = document.querySelector('.todo__input-item');
+
+const todoBlock = document.querySelector('.todo__block');
 
 colorButton.addEventListener('click', (e) => {
-	const bgPicture = document.querySelector('');
+	let todoItems = document.querySelectorAll('.todo__block-item');
+	let todoChecks = document.querySelectorAll('.todo__block-item__check');
+	let todoCheckWrappers = document.querySelectorAll(
+		'.todo__block-item__check-circle__wrap'
+	);
+	let todoCheckWrapperCircles = document.querySelectorAll(
+		'.todo__block-item__check-circle'
+	);
+	let todoTexts = document.querySelectorAll(
+		'.todo__block-item__text-wrapper'
+	);
+
+	if (theme === 'dark') {
+		theme = 'light';
+		themeIcon.src = './images/icon-moon.svg';
+
+		bgColor.style.backgroundColor = lightVlGrayishBlue;
+		bgPicture.style.backgroundImage = `url('./images/bg-desktop-light.jpg')`;
+
+		inputCheck.style.backgroundColor = lightVlGray;
+		inputBody.style.backgroundColor = lightVlGray;
+		inputBody.style.color = lightDGrayishBlue;
+		inputCheckWrapper.style.backgroundColor = lightLGrayishBlue;
+		inputCheckWrapperCircle.style.backgroundColor = lightVlGray;
+		todoBlock.style.backgroundColor = lightVlGray;
+		for (let todoItem of todoItems) {
+			todoItem.style.backgroundColor = lightVlGrayishBlue;
+			todoItem.style.color = lightDGrayishBlue;
+		}
+		for (let todoCheck of todoChecks) {
+			todoCheck.style.backgroundColor = lightVlGray;
+		}
+		for (let todoText of todoTexts) {
+			todoText.style.backgroundColor = lightVlGray;
+			todoText.style.color = lightVdGrayishBlue;
+		}
+		for (let todoCheckWrapper of todoCheckWrappers) {
+			todoCheckWrapper.style.backgroundColor = lightLGrayishBlue;
+		}
+		for (let todoCheckWrapperCircle of todoCheckWrapperCircles) {
+			todoCheckWrapperCircle.style.backgroundColor = lightVlGray;
+		}
+	} else if (theme === 'light') {
+		theme = 'dark';
+		themeIcon.src = './images/icon-sun.svg';
+
+		bgColor.style.backgroundColor = darkVdBlue;
+		bgPicture.style.backgroundImage = `url('./images/bg-desktop-dark.jpg')`;
+
+		inputCheck.style.backgroundColor = darkVdDesBlue;
+		inputBody.style.backgroundColor = darkVdDesBlue;
+		inputBody.style.color = darkLGrayishBlue;
+
+		inputCheckWrapper.style.backgroundColor = darkVdGrayishBlue1;
+		inputCheckWrapperCircle.style.backgroundColor = darkVdDesBlue;
+		todoBlock.style.backgroundColor = darkVdDesBlue;
+		for (let todoItem of todoItems) {
+			todoItem.style.backgroundColor = darkVdDesBlue;
+			todoItem.style.color = darkVdDesBlue;
+		}
+		for (let todoCheck of todoChecks) {
+			todoCheck.style.backgroundColor = darkVdDesBlue;
+		}
+		for (let todoText of todoTexts) {
+			todoText.style.backgroundColor = darkVdDesBlue;
+			todoText.style.color = darkLGrayishBlue;
+		}
+		for (let todoCheckWrapper of todoCheckWrappers) {
+			todoCheckWrapper.style.backgroundColor = darkVdGrayishBlue1;
+		}
+		for (let todoCheckWrapperCircle of todoCheckWrapperCircles) {
+			todoCheckWrapperCircle.style.backgroundColor = darkVdDesBlue;
+		}
+	}
 });

@@ -125,11 +125,10 @@ body {
 	border-bottom-right-radius: 2px;
 	color: var(--dark-l-grayish-blue);
 	width: 100%;
+	border: none;
 	font-size: 1.25rem;
 	padding: 1rem 0.2rem 1rem 0.5rem;
-	border: none;
 	background-color: var(--dark-vd-des-blue);
-	border: 1px solid var(--dark-vd-des-blue);
 	font-family: 'Josefin Sans', sans-serif;
 }
 .todo__input-item:focus {
@@ -229,7 +228,6 @@ body {
 	border: none;
 	background-color: var(--dark-vd-des-blue);
 	color: var(--dark-l-grayish-blue);
-	border: 1px solid var(--dark-vd-des-blue);
 }
 .todo__block-item__text {
 	overflow-wrap: anywhere;
