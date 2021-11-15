@@ -241,7 +241,6 @@ body {
 	width: 100%;
 	font-size: 1rem;
 	background-color: var(--dark-vd-des-blue);
-	border-top: 1px solid var(--dark-d-grayish-blue);
 }
 .todo__info-left {
 	padding-left: 1rem;
