@@ -18,6 +18,21 @@ darkVdGrayishBlue2 = 'hsl(237, 14%, 26%)';
 
 let theme = 'dark';
 
+function bordersUpdate() {
+	todoList = document.querySelectorAll('.todo__block-item');
+	if (theme === 'dark') {
+		for (let todo of todoList) {
+			todo.style.borderBottom = 'solid 1px hsl(237, 14%, 26%)';
+		}
+	} else if (theme === 'light') {
+		for (let todo of todoList) {
+			todo.style.borderBottom = 'solid 1px hsl(233, 11%, 84%)';
+		}
+	}
+}
+
+bordersUpdate();
+
 var todoList = document.querySelectorAll('.todo__block-item');
 for (let todo of todoList) {
 	todo.draggable = true;
@@ -41,6 +56,7 @@ for (let todo of todoList) {
 	todo.addEventListener('click', (e) => {
 		todo.classList.toggle('_active');
 		updateTodo();
+		bordersUpdate();
 	});
 }
 let todoDelete = document.querySelectorAll('.todo__block-item__delete');
@@ -48,6 +64,7 @@ for (let todoDel of todoDelete) {
 	todoDel.addEventListener('click', (e) => {
 		e.target.parentNode.parentNode.remove();
 		updateTodo();
+		bordersUpdate();
 	});
 }
 
@@ -75,6 +92,7 @@ panelButtonAll.addEventListener('click', (e) => {
 	for (let todo of todoList) {
 		todo.style.display = 'flex';
 	}
+	bordersUpdate();
 });
 panelButtonActive.addEventListener('click', (e) => {
 	resetButtons();
@@ -85,6 +103,7 @@ panelButtonActive.addEventListener('click', (e) => {
 			todo.style.display = 'flex';
 		}
 	}
+	bordersUpdate();
 });
 panelButtonCompleted.addEventListener('click', (e) => {
 	resetButtons();
@@ -95,6 +114,7 @@ panelButtonCompleted.addEventListener('click', (e) => {
 			todo.style.display = 'flex';
 		}
 	}
+	bordersUpdate();
 });
 
 const panelButtonsMobile = document.querySelectorAll('.panel-button-mobile');
@@ -115,6 +135,7 @@ panelButtonAllMobile.addEventListener('click', (e) => {
 	for (let todo of todoList) {
 		todo.style.display = 'flex';
 	}
+	bordersUpdate();
 });
 panelButtonActiveMobile.addEventListener('click', (e) => {
 	resetButtons();
@@ -125,6 +146,7 @@ panelButtonActiveMobile.addEventListener('click', (e) => {
 			todo.style.display = 'flex';
 		}
 	}
+	bordersUpdate();
 });
 panelButtonCompletedMobile.addEventListener('click', (e) => {
 	resetButtons();
@@ -135,6 +157,7 @@ panelButtonCompletedMobile.addEventListener('click', (e) => {
 			todo.style.display = 'flex';
 		}
 	}
+	bordersUpdate();
 });
 
 const clearButton = document.querySelector('.todo__info-clear');
@@ -144,6 +167,7 @@ clearButton.addEventListener('click', (e) => {
 		if (todo.classList.contains('_active'))
 			todo.parentNode.removeChild(todo);
 	}
+	bordersUpdate();
 });
 
 const todoForm = document.querySelector('.todo__input-block');
@@ -198,7 +222,7 @@ todoForm.addEventListener('submit', (e) => {
 	todo__blockItem.appendChild(todo__blockItem__textWrapper);
 
 	if (theme === 'light') {
-		todo__blockItem.style.backgroundColor = lightVlGrayishBlue;
+		todo__blockItem.style.backgroundColor = lightVlGray;
 		todo__blockItem.style.color = lightDGrayishBlue;
 
 		todo__blockItem__check.style.backgroundColor = lightVlGray;
@@ -227,6 +251,7 @@ todoForm.addEventListener('submit', (e) => {
 	todoList = document.querySelectorAll('.todo__block-item');
 	draggables = document.querySelectorAll('.draggable');
 	updateTodo();
+	bordersUpdate();
 	draggables.forEach((draggable) => {
 		draggable.addEventListener('dragstart', (e) => {
 			draggable.classList.add('dragging');
@@ -260,6 +285,7 @@ container.addEventListener('dragover', (e) => {
 	} else {
 		container.insertBefore(draggable, afterElement);
 	}
+	bordersUpdate();
 });
 
 function getDragAfterElement(container, y) {
@@ -332,7 +358,7 @@ colorButton.addEventListener('click', (e) => {
 
 		inputCheck.style.backgroundColor = lightVlGray;
 		inputBody.style.backgroundColor = lightVlGray;
-		inputBody.style.color = lightDGrayishBlue;
+		inputBody.style.color = lightVdGrayishBlue;
 		inputCheckWrapper.style.backgroundColor = lightLGrayishBlue;
 		inputCheckWrapperCircle.style.backgroundColor = lightVlGray;
 		todoBlock.style.backgroundColor = lightVlGray;
@@ -425,4 +451,5 @@ colorButton.addEventListener('click', (e) => {
 
 		dragAndDrap.style.color = darkDGrayishBlue;
 	}
+	bordersUpdate();
 });
