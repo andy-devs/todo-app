@@ -28,6 +28,7 @@ const todoCount = document.querySelector('.todo__info-left__count');
 
 function updateTodo() {
 	let count = 0;
+	todoList = document.querySelectorAll('.todo__block-item');
 	for (let todo of todoList) {
 		if (todo.classList.contains('_active')) {
 			count += 1;
@@ -39,6 +40,13 @@ updateTodo();
 for (let todo of todoList) {
 	todo.addEventListener('click', (e) => {
 		todo.classList.toggle('_active');
+		updateTodo();
+	});
+}
+let todoDelete = document.querySelectorAll('.todo__block-item__delete');
+for (let todoDel of todoDelete) {
+	todoDel.addEventListener('click', (e) => {
+		e.target.parentNode.parentNode.remove();
 		updateTodo();
 	});
 }
@@ -168,12 +176,16 @@ todoForm.addEventListener('submit', (e) => {
 
 	let todo__blockItem__textWrapper = document.createElement('div');
 	todo__blockItem__textWrapper.className = 'todo__block-item__text-wrapper';
+	let todo__blockTtem__delete = document.createElement('img');
+	todo__blockTtem__delete.src = './images/icon-cross.svg';
+	todo__blockTtem__delete.className = 'todo__block-item__delete';
 
 	let todo__blockItem__text = document.createElement('p');
 	todo__blockItem__text.className = 'todo__block-item__text';
 	todo__blockItem__text.innerHTML = todoText;
 
 	todo__blockItem__textWrapper.appendChild(todo__blockItem__text);
+	todo__blockItem__textWrapper.appendChild(todo__blockTtem__delete);
 
 	todo__blockItem__checkCircle__check.appendChild(todoImg);
 	todo__blockItem__checkCircle.appendChild(
@@ -204,6 +216,10 @@ todoForm.addEventListener('submit', (e) => {
 		updateTodo();
 	});
 	todo__blockItem.draggable = true;
+	todo__blockTtem__delete.addEventListener('click', (e) => {
+		e.target.parentNode.parentNode.remove();
+		updateTodo();
+	});
 
 	const todoBlock = document.querySelector('.todo__block');
 	todoBlock.appendChild(todo__blockItem);
@@ -290,7 +306,6 @@ const infoPanelButtons = document.querySelectorAll('.panel-button');
 const infoPanelButtonsMobile = document.querySelectorAll(
 	'.panel-button-mobile'
 );
-infoPanelButtons.length = 3;
 const infoClear = document.querySelector('.todo__info-clear');
 
 const dragAndDrap = document.querySelector('.todo__drag-and-drop__text');
@@ -322,7 +337,7 @@ colorButton.addEventListener('click', (e) => {
 		inputCheckWrapperCircle.style.backgroundColor = lightVlGray;
 		todoBlock.style.backgroundColor = lightVlGray;
 		for (let todoItem of todoItems) {
-			todoItem.style.backgroundColor = lightVlGrayishBlue;
+			todoItem.style.backgroundColor = lightVlGray;
 			todoItem.style.color = lightDGrayishBlue;
 		}
 		for (let todoCheck of todoChecks) {
@@ -340,16 +355,24 @@ colorButton.addEventListener('click', (e) => {
 		}
 		infoBlock.style.backgroundColor = lightVlGray;
 		infoPanelMobile.style.backgroundColor = lightVlGray;
-		infoLeft.style.color = lightVdGrayish;
+		infoLeft.style.color = lightDGrayishBlue;
 		for (let infoPanelButton of infoPanelButtons) {
-			infoPanelButton.style.color = lightVdGrayish;
+			infoPanelButton.style.color = lightDGrayishBlue;
+			infoPanelButton.classList.replace(
+				'panel-button-dark',
+				'panel-button-light'
+			);
 		}
 		for (let infoPanelButtonMobile of infoPanelButtonsMobile) {
-			infoPanelButtonMobile.style.color = lightVdGrayish;
+			infoPanelButtonMobile.style.color = lightDGrayishBlue;
+			infoPanelButtonMobile.classList.replace(
+				'panel-button-dark',
+				'panel-button-light'
+			);
 		}
-		infoClear.style.color = lightVdGrayish;
+		infoClear.style.color = lightDGrayishBlue;
 
-		dragAndDrap.style.color = lightVdGrayish;
+		dragAndDrap.style.color = lightVdGrayishBlue;
 	} else if (theme === 'light') {
 		theme = 'dark';
 		themeIcon.src = './images/icon-sun.svg';
@@ -386,9 +409,17 @@ colorButton.addEventListener('click', (e) => {
 		infoLeft.style.color = darkDGrayishBlue;
 		for (let infoPanelButton of infoPanelButtons) {
 			infoPanelButton.style.color = darkDGrayishBlue;
+			infoPanelButton.classList.replace(
+				'panel-button-light',
+				'panel-button-dark'
+			);
 		}
 		for (let infoPanelButtonMobile of infoPanelButtonsMobile) {
 			infoPanelButtonMobile.style.color = darkDGrayishBlue;
+			infoPanelButtonMobile.classList.replace(
+				'panel-button-light',
+				'panel-button-dark'
+			);
 		}
 		infoClear.style.color = darkDGrayishBlue;
 

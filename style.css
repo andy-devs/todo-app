@@ -136,14 +136,13 @@ body {
 }
 .todo__block {
 	background-color: var(--dark-vd-des-blue);
-	padding-bottom: 0.6rem;
-	padding-top: 0.2rem;
 	max-width: 100%;
 }
 .todo__block-item {
 	cursor: pointer;
 	display: flex;
 	width: 100%;
+	padding: 0.1rem 0;
 }
 .todo__block-item__check {
 	cursor: pointer;
@@ -221,16 +220,35 @@ body {
 	border-bottom-right-radius: 2px;
 	color: var(--dark-d-grayish-blue);
 	width: 100%;
-	font-size: 1.25rem;
+	line-height: 1.3rem;
+	font-size: 1.16rem;
 	padding: 0.2rem 0 0 0;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	border: none;
 	background-color: var(--dark-vd-des-blue);
 	color: var(--dark-l-grayish-blue);
 }
 .todo__block-item__text {
 	overflow-wrap: anywhere;
+}
+.todo__block-item__delete {
+	padding: 0 1.2rem 0 0;
+	transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	opacity: 0;
+	transition: opacity 0.15s ease-out;
+	-webkit-transition: opacity 0.15s ease-out;
+	-moz-transition: opacity 0.15s ease-out;
+	-ms-transition: opacity 0.15s ease-out;
+	-o-transition: opacity 0.15s ease-out;
+}
+.todo__block-item:hover .todo__block-item__delete {
+	opacity: 1;
 }
 .todo__info {
 	margin-bottom: 2.5rem;
@@ -259,12 +277,16 @@ body {
 	-ms-transition: color 0.15s ease-out;
 	-o-transition: color 0.15s ease-out;
 }
+.panel-button-dark:hover {
+	color: var(--dark-l-grayish-blue-hover) !important;
+}
+.panel-button-light:hover {
+	color: var(--light-vd-grayish-blue) !important;
+}
 .panel-button._active {
-	color: var(--primary-bright-blue);
+	color: var(--primary-bright-blue) !important;
 }
-.panel-button:hover {
-	color: var(--dark-l-grayish-blue-hover);
-}
+
 .todo__info-panel__all {
 	padding: 0.35rem;
 }
@@ -276,9 +298,6 @@ body {
 }
 .todo__info-clear {
 	padding: 1rem;
-}
-.todo__info-clear:hover {
-	color: var(--dark-l-grayish-blue-hover);
 }
 .todo__drag-and-drop {
 	width: 100%;
@@ -307,7 +326,6 @@ body {
 		border-radius: 0;
 		background-color: var(--dark-vd-des-blue);
 		max-width: 100%;
-		padding-bottom: 0.5rem;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
 		-ms-border-radius: 0;
@@ -370,6 +388,6 @@ body {
 		-o-transition: color 0.15s ease-out;
 	}
 	.panel-button-mobile._active {
-		color: var(--primary-bright-blue);
+		color: var(--primary-bright-blue) !important;
 	}
 }
