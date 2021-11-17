@@ -22,8 +22,12 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-body {
+html,
+body,
+.container {
 	overscroll-behavior-y: contain;
+}
+body {
 	background-color: var(--dark-vd-blue);
 	height: 100%;
 	width: 100%;
