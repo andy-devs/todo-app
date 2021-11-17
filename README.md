@@ -13,8 +13,6 @@ This is my solution to the [Todo app challenge on Frontend Mentor](https://www.f
     -   [What I learned](#what-i-learned)
     -   [Continued development](#continued-development)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -33,8 +31,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./images/Screenshot_Dark.jpg)
-![](./images/Screenshot_Light.jpg)
+![Dark Theme Screenshot](/images/Screenshot_Dark.png)
+![Light Theme Screenshot](/images/Screenshot_Light.png)
 
 ### Links
 
