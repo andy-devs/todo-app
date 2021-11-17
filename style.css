@@ -23,7 +23,7 @@
 	box-sizing: border-box;
 }
 body {
-	overscroll-behavior-y: contains;
+	overscroll-behavior-y: contain;
 	background-color: var(--dark-vd-blue);
 	height: 100%;
 	width: 100%;
