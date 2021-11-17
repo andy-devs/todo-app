@@ -144,6 +144,7 @@ body {
 	max-width: 100%;
 }
 .todo__block-item {
+	touch-action: none;
 	cursor: pointer;
 	display: flex;
 	width: 100%;
