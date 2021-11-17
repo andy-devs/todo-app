@@ -25,7 +25,7 @@
 html,
 body,
 .container {
-	overscroll-behavior-y: contain;
+	overscroll-behavior-y: none;
 }
 body {
 	background-color: var(--dark-vd-blue);
