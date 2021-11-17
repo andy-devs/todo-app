@@ -175,91 +175,96 @@ const todoInput = document.querySelector('.todo__input-item');
 
 todoForm.addEventListener('submit', (e) => {
 	e.preventDefault();
-	let todoText = todoInput.value;
-	todoInput.value = '';
+	if (todoInput.value) {
+		let todoText = todoInput.value;
+		todoInput.value = '';
 
-	let todo__blockItem = document.createElement('div');
-	todo__blockItem.className = 'todo__block-item draggable';
+		let todo__blockItem = document.createElement('div');
+		todo__blockItem.className = 'todo__block-item draggable';
 
-	let todo__blockItem__check = document.createElement('div');
-	todo__blockItem__check.className = 'todo__block-item__check';
+		let todo__blockItem__check = document.createElement('div');
+		todo__blockItem__check.className = 'todo__block-item__check';
 
-	let todo__blockItem__checkWrap = document.createElement('div');
-	todo__blockItem__checkWrap.className =
-		'todo__block-item__check-circle__wrap';
+		let todo__blockItem__checkWrap = document.createElement('div');
+		todo__blockItem__checkWrap.className =
+			'todo__block-item__check-circle__wrap';
 
-	let todo__blockItem__checkCircle = document.createElement('div');
-	todo__blockItem__checkCircle.className = 'todo__block-item__check-circle';
+		let todo__blockItem__checkCircle = document.createElement('div');
+		todo__blockItem__checkCircle.className =
+			'todo__block-item__check-circle';
 
-	let todo__blockItem__checkCircle__check = document.createElement('div');
-	todo__blockItem__checkCircle__check.className =
-		'todo__block-item__check-circle__check';
+		let todo__blockItem__checkCircle__check = document.createElement('div');
+		todo__blockItem__checkCircle__check.className =
+			'todo__block-item__check-circle__check';
 
-	let todoImg = document.createElement('img');
-	todoImg.src = './images/icon-check.svg';
+		let todoImg = document.createElement('img');
+		todoImg.src = './images/icon-check.svg';
 
-	let todo__blockItem__textWrapper = document.createElement('div');
-	todo__blockItem__textWrapper.className = 'todo__block-item__text-wrapper';
-	let todo__blockTtem__delete = document.createElement('img');
-	todo__blockTtem__delete.src = './images/icon-cross.svg';
-	todo__blockTtem__delete.className = 'todo__block-item__delete';
+		let todo__blockItem__textWrapper = document.createElement('div');
+		todo__blockItem__textWrapper.className =
+			'todo__block-item__text-wrapper';
+		let todo__blockTtem__delete = document.createElement('img');
+		todo__blockTtem__delete.src = './images/icon-cross.svg';
+		todo__blockTtem__delete.className = 'todo__block-item__delete';
 
-	let todo__blockItem__text = document.createElement('p');
-	todo__blockItem__text.className = 'todo__block-item__text';
-	todo__blockItem__text.innerHTML = todoText;
+		let todo__blockItem__text = document.createElement('p');
+		todo__blockItem__text.className = 'todo__block-item__text';
+		todo__blockItem__text.innerHTML = todoText;
 
-	todo__blockItem__textWrapper.appendChild(todo__blockItem__text);
-	todo__blockItem__textWrapper.appendChild(todo__blockTtem__delete);
+		todo__blockItem__textWrapper.appendChild(todo__blockItem__text);
+		todo__blockItem__textWrapper.appendChild(todo__blockTtem__delete);
 
-	todo__blockItem__checkCircle__check.appendChild(todoImg);
-	todo__blockItem__checkCircle.appendChild(
-		todo__blockItem__checkCircle__check
-	);
-	todo__blockItem__checkWrap.appendChild(todo__blockItem__checkCircle);
-	todo__blockItem__check.appendChild(todo__blockItem__checkWrap);
+		todo__blockItem__checkCircle__check.appendChild(todoImg);
+		todo__blockItem__checkCircle.appendChild(
+			todo__blockItem__checkCircle__check
+		);
+		todo__blockItem__checkWrap.appendChild(todo__blockItem__checkCircle);
+		todo__blockItem__check.appendChild(todo__blockItem__checkWrap);
 
-	todo__blockItem.appendChild(todo__blockItem__check);
-	todo__blockItem.appendChild(todo__blockItem__textWrapper);
+		todo__blockItem.appendChild(todo__blockItem__check);
+		todo__blockItem.appendChild(todo__blockItem__textWrapper);
 
-	if (theme === 'light') {
-		todo__blockItem.style.backgroundColor = lightVlGray;
-		todo__blockItem.style.color = lightDGrayishBlue;
+		if (theme === 'light') {
+			todo__blockItem.style.backgroundColor = lightVlGray;
+			todo__blockItem.style.color = lightDGrayishBlue;
 
-		todo__blockItem__check.style.backgroundColor = lightVlGray;
+			todo__blockItem__check.style.backgroundColor = lightVlGray;
 
-		todo__blockItem__textWrapper.style.backgroundColor = lightVlGray;
-		todo__blockItem__textWrapper.style.color = lightVdGrayishBlue;
+			todo__blockItem__textWrapper.style.backgroundColor = lightVlGray;
+			todo__blockItem__textWrapper.style.color = lightVdGrayishBlue;
 
-		todo__blockItem__checkWrap.style.backgroundColor = lightLGrayishBlue;
+			todo__blockItem__checkWrap.style.backgroundColor =
+				lightLGrayishBlue;
 
-		todo__blockItem__checkCircle.style.backgroundColor = lightVlGray;
+			todo__blockItem__checkCircle.style.backgroundColor = lightVlGray;
+		}
+
+		todo__blockItem.addEventListener('click', (e) => {
+			todo__blockItem.classList.toggle('_active');
+			updateTodo();
+		});
+		todo__blockItem.draggable = true;
+		todo__blockTtem__delete.addEventListener('click', (e) => {
+			e.target.parentNode.parentNode.remove();
+			updateTodo();
+		});
+
+		const todoBlock = document.querySelector('.todo__block');
+		todoBlock.appendChild(todo__blockItem);
+
+		todoList = document.querySelectorAll('.todo__block-item');
+		draggables = document.querySelectorAll('.draggable');
+		updateTodo();
+		bordersUpdate();
+		draggables.forEach((draggable) => {
+			draggable.addEventListener('dragstart', (e) => {
+				draggable.classList.add('dragging');
+			});
+			draggable.addEventListener('dragend', (e) => {
+				draggable.classList.remove('dragging');
+			});
+		});
 	}
-
-	todo__blockItem.addEventListener('click', (e) => {
-		todo__blockItem.classList.toggle('_active');
-		updateTodo();
-	});
-	todo__blockItem.draggable = true;
-	todo__blockTtem__delete.addEventListener('click', (e) => {
-		e.target.parentNode.parentNode.remove();
-		updateTodo();
-	});
-
-	const todoBlock = document.querySelector('.todo__block');
-	todoBlock.appendChild(todo__blockItem);
-
-	todoList = document.querySelectorAll('.todo__block-item');
-	draggables = document.querySelectorAll('.draggable');
-	updateTodo();
-	bordersUpdate();
-	draggables.forEach((draggable) => {
-		draggable.addEventListener('dragstart', (e) => {
-			draggable.classList.add('dragging');
-		});
-		draggable.addEventListener('dragend', (e) => {
-			draggable.classList.remove('dragging');
-		});
-	});
 });
 
 // Drag and Drop
@@ -398,7 +403,7 @@ colorButton.addEventListener('click', (e) => {
 		}
 		infoClear.style.color = lightDGrayishBlue;
 
-		dragAndDrap.style.color = lightVdGrayishBlue;
+		dragAndDrap.style.color = lightDGrayishBlue;
 	} else if (theme === 'light') {
 		theme = 'dark';
 		themeIcon.src = './images/icon-sun.svg';

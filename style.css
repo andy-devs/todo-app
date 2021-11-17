@@ -231,6 +231,7 @@ body {
 	color: var(--dark-l-grayish-blue);
 }
 .todo__block-item__text {
+	padding: 0.2rem 0rem;
 	overflow-wrap: anywhere;
 }
 .todo__block-item__delete {
@@ -389,5 +390,13 @@ body {
 	}
 	.panel-button-mobile._active {
 		color: var(--primary-bright-blue) !important;
+	}
+	.todo__block-item__delete {
+		padding: 0 0.8rem 0 0.2rem;
+		transform: scale(1);
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
 	}
 }
