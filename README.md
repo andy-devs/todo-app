@@ -46,6 +46,7 @@ Users should be able to:
 -   HTML
 -   CSS
 -   JavaScript
+-   [Dragula](https://github.com/bevacqua/dragula) - simple and useful library to make drag and drop
 
 ### What I learned
 
