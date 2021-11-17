@@ -140,6 +140,7 @@ body {
 	outline: none;
 }
 .todo__block {
+	touch-action: none;
 	background-color: var(--dark-vd-des-blue);
 	max-width: 100%;
 }
