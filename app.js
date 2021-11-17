@@ -369,7 +369,7 @@ colorButton.addEventListener('click', (e) => {
 		inputBody.style.backgroundColor = darkVdDesBlue;
 		inputBody.style.color = darkLGrayishBlue;
 
-		inputCheckWrapper.style.backgroundColor = darkVdGrayishBlue1;
+		inputCheckWrapper.style.backgroundColor = darkVdGrayishBlue2;
 		inputCheckWrapperCircle.style.backgroundColor = darkVdDesBlue;
 		todoBlock.style.backgroundColor = darkVdDesBlue;
 		for (let todoItem of todoItems) {
@@ -384,7 +384,7 @@ colorButton.addEventListener('click', (e) => {
 			todoText.style.color = darkLGrayishBlue;
 		}
 		for (let todoCheckWrapper of todoCheckWrappers) {
-			todoCheckWrapper.style.backgroundColor = darkVdGrayishBlue1;
+			todoCheckWrapper.style.backgroundColor = darkVdGrayishBlue2;
 		}
 		for (let todoCheckWrapperCircle of todoCheckWrapperCircles) {
 			todoCheckWrapperCircle.style.backgroundColor = darkVdDesBlue;

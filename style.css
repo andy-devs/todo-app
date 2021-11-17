@@ -63,19 +63,19 @@ body {
 	margin-bottom: 1.5rem;
 }
 .todo__head-text {
-	font-size: 2.7rem;
-	font-weight: 400;
-	letter-spacing: 1rem;
+	font-size: 2.5rem;
+	font-weight: 600;
+	letter-spacing: 1.1rem;
 }
 .todo__head-icon {
 	cursor: pointer;
 	height: 100%;
-	width: 2rem;
+	width: 1.8rem;
 	display: flex;
 }
 .todo__head-icon__item {
 	position: relative;
-	top: 0rem;
+	top: 0.05rem;
 	align-self: center;
 	width: 100%;
 }
@@ -111,7 +111,7 @@ body {
 	margin: 1rem;
 	width: 1.6rem;
 	height: 1.6rem;
-	background: var(--dark-vd-grayish-blue-1);
+	background: var(--dark-vd-grayish-blue-2);
 }
 .todo__input-item__check-circle__check {
 	width: 100%;
@@ -131,8 +131,9 @@ body {
 	color: var(--dark-l-grayish-blue);
 	width: 100%;
 	border: none;
-	font-size: 1.25rem;
-	padding: 1rem 0.2rem 1rem 0.5rem;
+	font-size: 1.2rem;
+	line-height: 2rem;
+	padding: 0.9rem 0.4rem 0.9rem 0.2rem;
 	background-color: var(--dark-vd-des-blue);
 	font-family: 'Josefin Sans', sans-serif;
 }
@@ -149,7 +150,7 @@ body {
 	cursor: pointer;
 	display: flex;
 	width: 100%;
-	padding: 0.1rem 0;
+	padding: 0.25rem 0;
 }
 .todo__block-item__check {
 	cursor: pointer;
@@ -178,7 +179,7 @@ body {
 	margin: 1rem;
 	width: 1.6rem;
 	height: 1.6rem;
-	background: var(--dark-vd-grayish-blue-1);
+	background: var(--dark-vd-grayish-blue-2);
 }
 .todo__block-item__check-circle__check {
 	width: 100%;
